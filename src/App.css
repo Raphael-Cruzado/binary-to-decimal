@@ -2,5 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 50%;
+  margin-bottom: 50%;
 }
 /* start here: hwo do i get the input box center? */

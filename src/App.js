@@ -4,7 +4,9 @@ import UserInput from './components/input-form.js';
 function App() {
   return (
     <div className='container'>
-      <UserInput />
+      <div className='user-card'>
+        <UserInput />
+      </div>
     </div>
   );
 }

@@ -1,14 +1,22 @@
+import { useState } from "react";
 
-export default function userInput() {
+function UserInput() {
+  const [value, setValue] = useState('');
+
   return (
     <form>
-      <label>
-        <input
-        type="number"
-        placeholder="input binary here"
-        maxLength="number8"
-        />
-      </label>
+      <input
+      type="text"
+      name="binary"
+      placeholder="input binary here"
+      maxLength="8"
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      />
+      <br/>
+      <button>Calculate</button>
     </form>
   )
 }
+
+export default UserInput;

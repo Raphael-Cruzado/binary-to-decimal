@@ -8,12 +8,17 @@ function UserInput() {
     console.log(value);
   }
 
+  const handleSubmit = (e) => {
+    const input = e.target[0].value;
+    const binary = parseInt(input);
+    e.preventDefault();
+  }
   // tomorrow get the value on submit and analyze it
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
-      type="text"
+      type="number"
       name="binary"
       placeholder="input binary here"
       maxLength="8"
@@ -21,7 +26,7 @@ function UserInput() {
       onChange={handleChange}
       />
       <br/>
-      <button>Calculate</button>
+      <input type="submit" value="Calculate"/>
     </form>
   )
 }

@@ -11,19 +11,23 @@ function UserInput() {
   const handleSubmit = (e) => {
     const input = e.target[0].value;
     const binary = parseInt(input);
+    console.log(binary);
+    if (isNaN(binary)) {
+      alert('input must be a number')
+    } else {
+      console.log('its a number')
+    }
     e.preventDefault();
   }
-  // tomorrow get the value on submit and analyze it
 
   return (
     <form onSubmit={handleSubmit}>
       <input
-      type="number"
       name="binary"
       placeholder="input binary here"
-      maxLength="8"
       value={value}
       onChange={handleChange}
+      maxLength="8"
       />
       <br/>
       <input type="submit" value="Calculate"/>

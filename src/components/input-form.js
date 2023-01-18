@@ -1,24 +1,32 @@
 import { useState } from "react";
+import EvaluateArray from "../components/evaluate-array.js"
 
 function UserInput() {
   let [value, setValue] = useState('');
   const handleChange = (e) => {
     value = e.target.value;
     setValue(e.target.value);
-    console.log(value);
   }
 
   const handleSubmit = (e) => {
+
     const input = e.target[0].value;
     const binary = parseInt(input);
-    console.log(binary);
+
+    const inputArray = value.split("");
+    EvaluateArray(inputArray);
+
+
     if (isNaN(binary)) {
       alert('input must be a number')
     } else {
-      console.log('its a number')
+      console.log("it's a number")
     }
     e.preventDefault();
   }
+
+// evaluate array for 1s and 0s using Evaluate array
+// function
 
   return (
     <form onSubmit={handleSubmit}>

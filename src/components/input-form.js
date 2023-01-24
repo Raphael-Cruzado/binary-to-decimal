@@ -9,20 +9,15 @@ function UserInput() {
   }
 
   const handleSubmit = (e) => {
-
+    e.preventDefault();
     const input = e.target[0].value;
     const binary = parseInt(input);
-
     const inputArray = value.split("");
-    EvaluateArray(inputArray);
-
-
     if (isNaN(binary)) {
       alert('input must be a number')
     } else {
-      console.log("it's a number")
+      EvaluateArray(inputArray);
     }
-    e.preventDefault();
   }
 
 // evaluate array for 1s and 0s using Evaluate array
